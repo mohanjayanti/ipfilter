@@ -1,0 +1,21 @@
+<h2>
+  Filters
+</h2>
+<ul class="iplist">
+  <li *ngFor="let entry of iplist" (click)="onSelect(entry)">
+<span class="badge"></span>
+<span>{{entry.sourceip}}</span>
+<span>{{entry.name}}</span>
+<span>{{entry.methodName}}</span>
+<span>{{entry.methodNS}}</span>
+<span>{{entry.type}}</span>
+<span>{{entry.action}}</span>
+<span>{{entry.uri}}</span>
+     </li>
+</ul>
+<div *ngIf="selectedEntry">
+  <h2>
+    {{selectedEntry.name}}::{{selectedEntry.methodNS}} is {{selectedEntry.action}}ED from IP = {{selectedEntry.sourceip}}
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
