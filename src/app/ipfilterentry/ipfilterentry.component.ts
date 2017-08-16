@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IpfilterentryComponent //implements OnInit 
 {
+  id:number;
   sourceip: string;
   name: string;
   methodName: string;

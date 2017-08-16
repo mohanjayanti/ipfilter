@@ -5,8 +5,8 @@ import { IplistService } from './iplist.service';
 @Component({
   selector: 'app-iplist',
   templateUrl: './iplist.component.html',
-  styleUrls: ['./iplist.component.scss'],
-  providers: [IplistService]
+  styleUrls: ['./iplist.component.scss']
+  //providers: [IplistService]
 })
 export class IplistComponent implements OnInit {
 
@@ -27,6 +27,7 @@ export class IplistComponent implements OnInit {
     ];
     this.iplist = IPs;
     */
+    console.log('nGOnInit of IplistComponent');
     this.iplistservice.getIplist().then(iplist => this.iplist = iplist);
 
   }
