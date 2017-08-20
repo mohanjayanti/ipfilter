@@ -5,22 +5,24 @@ import { HttpModule }    from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './iplist/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.modules';
+import { RouterModule }   from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { IplistComponent } from './iplist/iplist.component';
-import { IpfilterentryComponent } from './ipfilterentry/ipfilterentry.component';
+import { FiltersComponent } from './iplist/filters.component';
 import { IplistService } from './iplist/iplist.service';
+import { FilterDetailComponent } from './filter-detail/filter-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,    
-    IplistComponent,
-    IpfilterentryComponent
+    FiltersComponent,
+    FilterDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AppRoutingModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [IplistService],

@@ -13,6 +13,7 @@
 <span>{{entry.uri}}</span>
      </li>
 </ul>
+<button (click)="goBack()">Back</button>
 <div *ngIf="selectedEntry">
   <h2>
     {{selectedEntry.name}}::{{selectedEntry.methodNS}} is {{selectedEntry.action}}ED from IP = {{selectedEntry.sourceip}}

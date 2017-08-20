@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { IpfilterentryComponent } from '../ipfilterentry/ipfilterentry.component';
+import { Filter } from '../ipfilterentry/filter';
 import { IplistService } from './iplist.service';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-iplist',
-  templateUrl: './iplist.component.html',
-  styleUrls: ['./iplist.component.scss']
+  templateUrl: './filters.component.html',
+  styleUrls: ['./filters.component.scss']
   //providers: [IplistService]
 })
-export class IplistComponent implements OnInit {
+export class FiltersComponent implements OnInit {
 
-  iplist: IpfilterentryComponent[];
-  selectedEntry: IpfilterentryComponent;
+  iplist: Filter[];
+  selectedEntry: Filter;
 
-  constructor(private iplistservice: IplistService) { }
+  constructor(private iplistservice: IplistService,
+  private location: Location, private router: Router) { }
 
   ngOnInit() {  
     /*
@@ -32,10 +36,21 @@ export class IplistComponent implements OnInit {
 
   }
 
-  onSelect(ip: IpfilterentryComponent): void{
+  onSelect(ip: Filter): void{
     // alert('sd');
    this.selectedEntry = ip;
   
+  }
+
+  goBack(): void{
+    
+    this.location.back();
+    
+  }
+
+  gotoDetail(): void{
+
+    this.router.navigate(['/detail',this.selectedEntry.id]);
   }
 
 }

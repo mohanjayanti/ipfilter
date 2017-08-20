@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IplistComponent } from './iplist.component';
+import { Filter } from './filter';
 
-describe('IplistComponent', () => {
-  let component: IplistComponent;
-  let fixture: ComponentFixture<IplistComponent>;
+describe('IpfilterentryComponent', () => {
+  let component: Filter;
+  let fixture: ComponentFixture<Filter>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IplistComponent ]
+      declarations: [ Filter ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IplistComponent);
+    fixture = TestBed.createComponent(Filter);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

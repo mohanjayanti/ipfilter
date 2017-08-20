@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {IplistComponent} from './iplist/iplist.component';
-import {IpfilterentryComponent} from './ipfilterentry/ipfilterentry.component';
+import {FiltersComponent} from './iplist/filters.component';
+import {Filter} from './ipfilterentry/filter';
+import {FilterDetailComponent} from './filter-detail/filter-detail.component';
 
 const routes: Routes = [
     
-    {path:'iplist', component:IplistComponent},
-    {path:'ipfilterentry', component:IpfilterentryComponent}
+    {path:'iplist', component:FiltersComponent},
+    {path:'detail/:id', component:FilterDetailComponent}
     
     ];
 

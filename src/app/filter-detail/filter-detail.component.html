@@ -1,0 +1,13 @@
+<div *ngIf="filter">
+  <h2>Filter Details</h2>
+  <h2>{{filter.name}} =</h2>
+  <div>
+    <label>id: </label>{{filter.id}}</div>
+  <div>
+    <label>action: </label>
+    <label>{{filter.action}}</label>
+    <input [(ngModel)]="filter.action" placeholder="name" />
+   </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

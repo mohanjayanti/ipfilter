@@ -1,6 +1,6 @@
-import { IpfilterentryComponent } from '../ipfilterentry/ipfilterentry.component';
+import { Filter } from '../ipfilterentry/filter';
  
- export const IPs: IpfilterentryComponent[] = [
+ export const IPs: Filter[] = [
       {  id:1, sourceip: '100.x.x.11', name: 'OOHCList', methodName: 'OOHCList', methodNS:'urn:api:com', type:'SOAP', action:'BLOCK', uri:'' },
       {  id:2, sourceip: '100.x.x.12', name: 'OOHCListDET', methodName: 'OOHCListDET', methodNS:'urn:api:com', type:'SOAP', action:'OPEN', uri:'' },
       {  id:3, sourceip: '100.x.x.13', name: 'GetYoungPerson', methodName: 'GetYoungPerson', methodNS:'urn:api:com', type:'SOAP', action:'OPEN', uri:'' },

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IpfilterentryComponent } from './ipfilterentry.component';
+import { FilterDetailComponent } from './filter-detail.component';
 
-describe('IpfilterentryComponent', () => {
-  let component: IpfilterentryComponent;
-  let fixture: ComponentFixture<IpfilterentryComponent>;
+describe('FilterDetailComponent', () => {
+  let component: FilterDetailComponent;
+  let fixture: ComponentFixture<FilterDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IpfilterentryComponent ]
+      declarations: [ FilterDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IpfilterentryComponent);
+    fixture = TestBed.createComponent(FilterDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
