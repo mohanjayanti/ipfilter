@@ -12,6 +12,12 @@ import { FiltersComponent } from './iplist/filters.component';
 import { IplistService } from './iplist/iplist.service';
 import { FilterDetailComponent } from './filter-detail/filter-detail.component';
 
+// App Views
+import {MainViewModule} from "./views/main-view/main-view.module";
+
+//App Layout
+import {LayoutsModule} from "./common/layouts/layouts.module";
+
 @NgModule({
   declarations: [
     AppComponent,    
