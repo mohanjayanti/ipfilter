@@ -35,6 +35,12 @@ export class IplistService {
 
     }
 
+    addfilter( filter: Filter): Promise<Filter>{
+        console.log('Before calling the add filter web service');
+        console.log(filter);
+        return this.http.post(this.serviceUrl,JSON.stringify(filter),{headers: this.headers}).toPromise().then(() => filter).catch(this.handleError);
+    }
+
 
     private handleError(error: any): Promise<any> {
         console.log("error with the calling the service url");

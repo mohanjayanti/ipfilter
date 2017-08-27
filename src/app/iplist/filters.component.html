@@ -1,17 +1,17 @@
-<h2>
+<!--h2>
   Filters
 </h2>
 <ul class="iplist">
   <li *ngFor="let entry of iplist" (click)="onSelect(entry)">
-<span class="badge"></span>
-<span>{{entry.sourceip}}</span>
-<span>{{entry.name}}</span>
-<span>{{entry.methodName}}</span>
-<span>{{entry.methodNS}}</span>
-<span>{{entry.type}}</span>
-<span>{{entry.action}}</span>
-<span>{{entry.uri}}</span>
-     </li>
+    <span class="badge"></span>
+    <span>{{entry.sourceip}}</span>
+    <span>{{entry.name}}</span>
+    <span>{{entry.methodName}}</span>
+    <span>{{entry.methodNS}}</span>
+    <span>{{entry.type}}</span>
+    <span>{{entry.action}}</span>
+    <span>{{entry.uri}}</span>
+  </li>
 </ul>
 <button (click)="goBack()">Back</button>
 <div *ngIf="selectedEntry">
@@ -19,4 +19,43 @@
     {{selectedEntry.name}}::{{selectedEntry.methodNS}} is {{selectedEntry.action}}ED from IP = {{selectedEntry.sourceip}}
   </h2>
   <button (click)="gotoDetail()">View Details</button>
+</div-->
+
+<div class="container wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="text-center m-t-lg">
+        <h1>
+          Filters
+        </h1>
+        <small>
+                    
+                </small>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <ul class="iplist">
+        <li *ngFor="let entry of iplist" (click)="onSelect(entry)">
+          <span class="badge"></span>
+          <span>{{entry.sourceip}}</span>
+          <span>{{entry.name}}</span>
+          <span>{{entry.methodName}}</span>
+          <span>{{entry.methodNS}}</span>
+          <span>{{entry.type}}</span>
+          <span>{{entry.action}}</span>
+          <span>{{entry.uri}}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="col-lg-12">
+      <button (click)="goBack()">Back</button>
+      <div *ngIf="selectedEntry">
+        <h2>
+          {{selectedEntry.name}}::{{selectedEntry.methodNS}} is {{selectedEntry.action}}ED from IP = {{selectedEntry.sourceip}}
+        </h2>
+        <button (click)="gotoDetail()">View Details</button>
+      </div>
+       <button (click)="addNew()">Add</button>
+    </div>
+  </div>
 </div>

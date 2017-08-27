@@ -53,4 +53,8 @@ export class FiltersComponent implements OnInit {
     this.router.navigate(['/detail',this.selectedEntry.id]);
   }
 
+  addNew(): void{
+    this.router.navigate(['/add']);
+  }
+
 }

@@ -1,0 +1,46 @@
+<div class="container">
+<p>
+  filter-add works!
+</p>
+
+ <div>
+    <label>Name: </label>
+    
+    <input [(ngModel)]="filter.name" placeholder="Filter Name" />
+   </div>
+ 
+  <div>
+    <label>sourceip: </label>
+   
+    <input [(ngModel)]="filter.sourceip" placeholder="Source IP" />
+   </div>
+ 
+  <div>
+    <label>methodName: </label>
+   
+    <input [(ngModel)]="filter.methodName" placeholder="Soap Method Name" />
+   </div>
+ 
+  <div>
+    <label>methodNS: </label>
+   
+    <input [(ngModel)]="filter.methodNS" placeholder="SOAP Method Namespace" />
+   </div>
+   <div>
+    <label>type: </label>
+   
+    <input [(ngModel)]="filter.type" placeholder="Type" />
+   </div>
+   <div>
+    <label>action: </label>
+   
+    <input [(ngModel)]="filter.action" placeholder="BLOCK or OPEN" />
+   </div>
+   <div>
+    <label>uri: </label>
+   
+    <input [(ngModel)]="filter.uri" placeholder="REST URI" />
+   </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="add()">Save</button>
+  </div>

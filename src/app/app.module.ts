@@ -6,7 +6,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './iplist/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.modules';
 import { RouterModule }   from '@angular/router';
-
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import { AppComponent } from './app.component';
 import { FiltersComponent } from './iplist/filters.component';
 import { IplistService } from './iplist/iplist.service';
@@ -14,24 +14,39 @@ import { FilterDetailComponent } from './filter-detail/filter-detail.component';
 
 // App Views
 import {MainViewModule} from "./views/main-view/main-view.module";
+import {MinorViewModule} from "./views/minor-view/minor-view.module";
+import {LoginModule} from "./views/login/login.module";
+import {RegisterModule} from "./views/register/register.module";
 
 //App Layout
 import {LayoutsModule} from "./common/layouts/layouts.module";
+import { FilterAddComponent } from './filter-add/filter-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,    
     FiltersComponent,
-    FilterDetailComponent
+    FilterDetailComponent,
+    FilterAddComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    // Views
+    MainViewModule,
+    MinorViewModule,
+    LoginModule,
+    RegisterModule,
+
+    // Modules
+    LayoutsModule,
+
     AppRoutingModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    
   ],
-  providers: [IplistService],
+  providers: [IplistService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
