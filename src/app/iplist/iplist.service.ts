@@ -4,6 +4,8 @@ import { FiltersComponent } from './filters.component';
 import { Filter } from '../ipfilterentry/filter';
 import 'rxjs/add/operator/toPromise';
 import { IPs } from './mock-iplist';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 
 @Injectable()
@@ -46,4 +48,9 @@ export class IplistService {
         console.log("error with the calling the service url");
         return Promise.reject(error.message || error);
     }
+
+    search(term: string): Observable<Filter[]> {
+        const url = `${this.serviceUrl}?name=${term}`;
+        return this.http.get(url).map(response => response.json().data as Filter[]);
+    } 
 }

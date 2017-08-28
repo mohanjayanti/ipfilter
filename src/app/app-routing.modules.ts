@@ -7,14 +7,16 @@ import {basicComponent} from './common/layouts/basic.component';
 import {mainViewComponent} from './views/main-view/main-view.component';
 import {minorViewComponent} from './views/minor-view/minor-view.component';
 import {FilterAddComponent} from './filter-add/filter-add.component';
+import {FilterSearchComponent} from './filter-search/filter-search.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: 'iplist', pathMatch: 'full'},
+    {path: '', redirectTo: 'search', pathMatch: 'full'},
     //{path:'iplist', component:FiltersComponent},
    // {path:'detail/:id', component:FilterDetailComponent},
     {
     path: '', component: basicComponent,
     children: [
+      {path: 'search', component: FilterSearchComponent},
       {path: 'iplist', component: FiltersComponent},
       {path:'detail/:id', component:FilterDetailComponent},
       {path:'add', component: FilterAddComponent},

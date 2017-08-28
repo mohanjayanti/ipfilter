@@ -15,6 +15,9 @@
                     IN+
                 </div>
             </li>
+            <li [ngClass]="{active: activeRoute('search')}">
+                <a [routerLink]="['/search']"><i class="fa fa-th-large"></i> <span class="nav-label">Search Filters</span></a>
+            </li>
             <li [ngClass]="{active: activeRoute('iplist')}">
                 <a [routerLink]="['/iplist']"><i class="fa fa-th-large"></i> <span class="nav-label">List Filters</span></a>
             </li>

@@ -21,13 +21,15 @@ import {RegisterModule} from "./views/register/register.module";
 //App Layout
 import {LayoutsModule} from "./common/layouts/layouts.module";
 import { FilterAddComponent } from './filter-add/filter-add.component';
+import { FilterSearchComponent } from './filter-search/filter-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,    
     FiltersComponent,
     FilterDetailComponent,
-    FilterAddComponent
+    FilterAddComponent,
+    FilterSearchComponent
   ],
   imports: [
     BrowserModule,
